@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Pacifico-400';
+    src:url('Pacifico-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'PTSansCaption-700';
+    src: url('PTSansCaption-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'PTSansCaption-400';
+    src: url('PTSansCaption-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Righteous-400';
+    src:url('Righteous-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+

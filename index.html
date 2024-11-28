@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A library of book store websites and links, providing easy access to various online book sellers."
+        name="description">
+    <meta content="books,Book Store Directory,Book Marketplace,Buy Books Online" name="Keywords">
+    <title>BookMark</title>
+    <link rel="icon" href="favicon/bookmark.png">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="./Fonts/font-style.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="Css/all.min.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="./Css/Style.css" />
+</head>
+
+<body>
+    <main class="mt-5">
+        <div class="container d-flex flex-column">
+            <h1 class="">Bookmarker</h1>
+            <div class="bodyBooKmark mt-5 py-4 px-3">
+                <h2 class=""> <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i
+                        class="fa-solid fa-bookmark"></i></h2>
+            </div>
+
+            <div class="site-url w-100 d-flex flex-column justify-content-center">
+                <label for="siteName" class="pb-2 align-self-start"><i class="fa-solid fa-book-bookmark pe-2"></i>Site
+                    Name</label>
+                <input type="text" name="Site Name" id="siteName" class=" form-control px-2 py-2 rounded-2" required placeholder="Bookmark Name" oninput="validateForm(this)">
+                <div class="text-danger pt-3 d-none"><p>Please Enter a valid site name with first letter is  capital and at least 3 characters</p></div>
+            </div>
+            <div class="site-url w-100 d-flex flex-column justify-content-center pt-4 ">
+                <label for="siteUrl" class="pb-2 align-self-start"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                <input type="url" name="Site URL" id="siteUrl" class=" form-control px-2 py-2 rounded-2" required placeholder="Website URL" oninput="validateForm(this)">
+                <div class="text-danger pt-3 d-none"><p>Please Enter a valid Site URL Example: https://www.example.com </p></div>
+    
+            </div>
+            <button class="btn btn-danger mt-4 px-5 align-self-center Submit" id="submitBtn"
+                onclick="addBook()">Submit</button>
+                <button class="btn btn-secondary mt-4 px-5 align-self-center editBook d-none" id="editBtn"
+                onclick="updateBook()">Update</button>
+            <div class="tableDot mt-4">
+                <table class="table mt-4 text-center bg-light">
+                    <thead>
+                        <th class="text-capitalize">index</th>
+                        <th class="text-capitalize">Website Name</th>
+                        <th class="text-capitalize">Visit</th>
+                        <th class="text-capitalize">Delete</th>
+                        <th class="text-capitalize">Edit</th>
+
+                    </thead>
+                    <tbody id="tableContent">
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+
+        <div id="MassageValid" class="box-info start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+    <div class="box-conent w-30 bg-white p-4 rounded-2 shadow-lg">
+        <header class="box-header w-100 d-flex justify-content-between align-items-center mb-4">
+            <div class="circles d-flex">
+                <span class="me-2"></span>
+                <span class="me-2"></span>
+                <span class="me-2"></span>
+            </div>
+            <button class=" border-0" id="closeBtn" onclick="closeBox()">
+                <i class="fa-solid fa-xmark close fs-3"></i>
+            </button>
+        </header>
+        <p class="m-0 pb-2">
+            Site Name or Url is not valid, Please follow the rules below :
+        </p>
+        <ol class="rules list-unstyled m-0">
+            <li>
+                <i class="fa-regular fa-circle-right p-2"></i>Site name must
+                contain at least 3 characters
+            </li>
+            <li>
+                <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+                valid one
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div id="MassageError" class="box-info start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+    <div class="box-conent w-50 bg-white p-4 rounded-2 shadow-lg">
+        <header class="box-header w-100 d-flex justify-content-between align-items-center mb-4">
+            <div class="circles d-flex">
+                <span class="me-2"></span>
+                <span class="me-2"></span>
+                <span class="me-2"></span>
+            </div>
+            <button class=" border-0" id="closeBtn" onclick="closeBoxError()">
+                <i class="fa-solid fa-xmark close fs-3"></i>
+            </button>
+        </header>
+        <p class="m-0 pb-2">
+            We found this URL already in your bookmarks,Please add a new one
+        </p>
+    </div>
+</div>
+
+    </main>
+
+
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- javascript -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
